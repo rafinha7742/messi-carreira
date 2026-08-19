@@ -1,0 +1,12 @@
+{
+  "folders": [
+    { "name": "frontend", "path": "." },
+    { "name": "backend", "path": "../messi-backend" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.pytest_cache": true
+    }
+  }
+}
