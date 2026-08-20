@@ -16,7 +16,7 @@ export default function HomeStats({ games, goals, assists }: HomeStatsProps) {
         jogo a jogo.
       </h1>
       <p className="text-white/50 max-w-xl mt-5 text-[15px] leading-relaxed">
-        Daaaaaaaaaaa estreia contra o Espanyol até a partida mais recente: todo gol,
+        Da estreia contra o Espanyol até a partida mais recente: todo gol,
         toda assistência e toda final, na ordem exata em que aconteceram.
       </p>
 
