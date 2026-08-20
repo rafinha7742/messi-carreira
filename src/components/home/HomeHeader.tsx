@@ -41,7 +41,7 @@ export default function HomeHeader({ tema, searchValue, onSearchChange, onSearch
             inputRef.current?.focus();
             onSearchFocus();
           }}
-          className={`flex items-center gap-2 border rounded-full px-3 py-1.5 text-sm w-40 md:w-full md:max-w-xs transition-colors duration-200 ${
+          className={`flex min-w-0 flex-1 sm:flex-none items-center gap-2 border rounded-full px-3 py-1.5 text-sm sm:w-40 md:w-full md:max-w-xs transition-colors duration-200 ${
             isSearchActive
               ? "border-white bg-white/10 text-white"
               : "border-white/15 bg-transparent text-white/40 hover:border-white/40 hover:text-white"

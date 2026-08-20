@@ -10,8 +10,8 @@ export interface GrupoTitulo {
   titulos: Titulo[];
 }
 
-// Dados de exemplo pra ilustrar o layout — vamos conferir e completar os
-// números exatos (e a contagem oficial mais recente) antes de ir pro código real.
+
+
 export const grupos: GrupoTitulo[] = [
   {
     time: "FC Barcelona",

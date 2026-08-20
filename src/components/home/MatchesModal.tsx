@@ -25,10 +25,10 @@ export default function MatchesModal({ partidas, tema, searchValue, onSearchChan
 
   return (
     <div
-      className="fixed inset-0 bg-black/80 z-[60] flex items-end md:items-center justify-center"
+      className="fixed inset-0 bg-black/80 z-[60] flex items-end md:items-center justify-center p-0 md:p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <div role="dialog" aria-modal="true" aria-labelledby="matches-title" className="bg-[#12151B] w-full md:max-w-4xl md:rounded-xl border border-white/10 max-h-[85vh] flex flex-col">
+      <div role="dialog" aria-modal="true" aria-labelledby="matches-title" className="bg-[#12151B] w-full md:max-w-4xl rounded-t-2xl md:rounded-xl border border-white/10 max-h-[92dvh] md:max-h-[85vh] flex flex-col">
         <div className="flex flex-wrap items-center gap-3 p-4 border-b border-white/10">
           <div className="min-w-0 flex-1">
             <div id="matches-title" className="font-display text-lg">Partidas — {tema.nome}</div>
@@ -63,7 +63,7 @@ export default function MatchesModal({ partidas, tema, searchValue, onSearchChan
         </div>
 
         <div className="overflow-auto flex-1" tabIndex={0}>
-          <table className="w-full text-sm">
+          <table className="w-full min-w-[680px] text-sm">
             <thead className="sticky top-0 bg-[#12151B] border-b border-white/10">
               <tr className="text-left text-white/40 font-mono text-xs">
                 <th className="px-3 py-2">#</th>

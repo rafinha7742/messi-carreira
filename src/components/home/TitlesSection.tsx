@@ -9,9 +9,9 @@ export default function TitlesSection() {
   useEffect(() => {
     getTitulos()
       .then((dados) => {
-        // Cada item do back-end tem um campo "vezes" (quantas vezes aquele
-        // título foi ganho). Somamos todos pra chegar no total geral —
-        // é a mesma conta que o TitulosData.ts local fazia com "reduce".
+        
+        
+        
         const total = dados.reduce((soma, t) => soma + t.vezes, 0);
         setTotalTitulos(total);
       })

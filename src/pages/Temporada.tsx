@@ -124,7 +124,7 @@ export default function Temporada() {
 
   return (
     <div className="page-legacy-font min-h-screen text-[#EDEAE3] font-sans" style={{ backgroundColor: "#0A0C10" }}>
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Link to={backTo} className="inline-flex items-center gap-1 text-sm text-white/50 hover:text-white/80 mb-6">
           <ChevronLeft size={16} /> {backText}
         </Link>
@@ -133,13 +133,13 @@ export default function Temporada() {
           {jogos.length} JOGOS · {formatNumber(gols)} GOLS · {formatNumber(assists)} ASSISTÊNCIAS
         </p>
         <h1 className="font-display text-3xl md:text-4xl mb-8">Temporada {temporada.code}</h1>
-        <div className="rounded-2xl border border-white/10 bg-[#12151B] p-6 mb-10">
+        <div className="rounded-2xl border border-white/10 bg-[#12151B] p-4 sm:p-6 mb-8 sm:mb-10">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="text-sm text-white/40 uppercase tracking-[0.24em] mb-2">{temporada.era}</div>
               <div className="font-display text-2xl">{theme.nome}</div>
             </div>
-            <div className="text-right">
+            <div className="text-left md:text-right">
               <div className="text-xs uppercase text-white/40">Resumo da temporada</div>
               <div className="font-mono text-sm mt-1">
                 {temporada.jogos} jogos · {temporada.gols} gols · {temporada.assist} assist.

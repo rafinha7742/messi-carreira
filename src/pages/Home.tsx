@@ -51,7 +51,7 @@ export default function Home() {
       try {
         setLoading(true);
         setError(null);
-        // Busca as duas coisas ao mesmo tempo (mais rápido que uma de cada vez)
+        
         const [partidasData, mundiaisData] = await Promise.all([
           getPartidas(),
           getMundiais(),

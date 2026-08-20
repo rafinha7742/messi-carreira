@@ -1,6 +1,6 @@
-// Esse é o "tipo" de uma partida: descreve exatamente quais campos
-// toda partida tem, e de que tipo cada um é. Isso é TypeScript de verdade:
-// se você tentar usar p.gols como texto em vez de número, o editor avisa.
+
+
+
 export interface Partida {
   idx: number;
   data: string;
@@ -13,7 +13,7 @@ export interface Partida {
   cartoes: number;
 }
 
-// ": Partida[]" diz: essa constante é uma LISTA de itens do tipo Partida.
+
 export const partidas: Partida[] = [
   { idx: 1, data: "16-10-2004", comp: "La Liga", casa: "Espanyol", placar: "0-1", fora: "FC Barcelona", gols: 0, assist: 0, cartoes: 0 },
   { idx: 2, data: "24-10-2004", comp: "La Liga", casa: "FC Barcelona", placar: "3-0", fora: "Osasuna", gols: 0, assist: 0, cartoes: 0 },

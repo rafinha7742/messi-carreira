@@ -48,8 +48,8 @@ const fotosPorTreinador: Record<string, string> = {
   "Lionel Scaloni": scaloniImage,
 };
 
-// Agrupa a lista de treinadores por time — mesmo padrão que já
-// usamos na página de Títulos.
+
+
 function agruparPorTime(lista: Treinador[]) {
   const mapa = new Map<string, { time: string; cor: string; treinadores: Treinador[] }>();
   lista.forEach((t) => {
@@ -79,7 +79,7 @@ export default function Treinadores() {
         body, div { font-family: 'Public Sans', sans-serif; }
       `}</style>
 
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Link to="/" className="flex items-center gap-1 text-sm text-white/50 hover:text-white/80 mb-6">
           <ChevronLeft size={16} /> voltar pra home
         </Link>
@@ -94,7 +94,7 @@ export default function Treinadores() {
           O desempenho de Messi sob o comando de cada treinador que já dirigiu ele — clube e seleção.
         </p>
 
-        {/* filtro por time, mesmo padrão do TeamSelector da Home */}
+        
         <div className="flex flex-wrap gap-2 mb-8">
           {times.map((time) => {
             const corDoTime =
@@ -116,7 +116,7 @@ export default function Treinadores() {
           })}
         </div>
 
-        {/* grupos por time */}
+        
         <div className="space-y-10">
           {grupoVisiveis.map((grupo) => (
             <div key={grupo.time}>
@@ -156,7 +156,7 @@ export default function Treinadores() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-2 text-center">
+                    <div className="grid grid-cols-2 min-[380px]:grid-cols-4 gap-2 text-center">
                       <div className="rounded-xl bg-white/5 p-2.5">
                         <div className="text-[10px] uppercase text-white/40">jogos</div>
                         <div className="mt-1 font-semibold text-sm">{t.jogos}</div>

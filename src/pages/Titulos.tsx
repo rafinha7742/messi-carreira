@@ -18,9 +18,9 @@ import leaguesCup from "../assets/times/mls.png";
 
 
 
-// Formato "agrupado" que a tela usa pra desenhar cada bloco por time.
-// É o mesmo formato que o TitulosData.ts local tinha — só que agora
-// construído a partir da lista "achatada" que vem do back-end.
+
+
+
 interface GrupoTitulo {
   time: string;
   cor: string;
@@ -35,12 +35,12 @@ export default function TitulosPreview() {
   useEffect(() => {
     getTitulos()
       .then((dados: Titulo[]) => {
-        // 1) Soma geral: pega o campo "vezes" de cada título e soma tudo.
+        
         const total = dados.reduce((soma, t) => soma + t.vezes, 0);
         setTotalTitulos(total);
 
-        // 2) Agrupamento: percorre a lista achatada e vai juntando os
-        // títulos que têm o mesmo "time" dentro de um único grupo.
+        
+        
         const mapaGrupos = new Map<string, GrupoTitulo>();
 
         dados.forEach((t) => {
@@ -78,7 +78,7 @@ export default function TitulosPreview() {
         body, div { font-family: 'Public Sans', sans-serif; }
       `}</style>
 
-      <div className="max-w-3xl mx-auto px-6 py-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Link to="/" className="flex items-center gap-1 text-sm text-white/50 hover:text-white/80 mb-6">
           <ChevronLeft size={16} /> voltar pra home
         </Link>
@@ -93,7 +93,7 @@ export default function TitulosPreview() {
           O jogador com mais títulos da história do futebol — clube e seleção somados.
         </p>
 
-        {/* número total, grande, estilo "hero" */}
+        
         <div
           className="rounded-xl p-6 mb-10 border"
           style={{
@@ -110,7 +110,7 @@ export default function TitulosPreview() {
           <div className="text-sm text-white/50 mt-1">títulos conquistados na carreira</div>
         </div>
 
-        {/* grupos por time */}
+        
         <div className="space-y-3">
           {grupos.map((g) => {
             const totalGrupo = g.titulos.reduce((s, t) => s + t.vezes, 0);

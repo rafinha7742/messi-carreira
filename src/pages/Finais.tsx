@@ -85,7 +85,7 @@ export default function Finais() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Link to="/" className="flex items-center gap-1 text-sm text-white/50 hover:text-white/80 mb-6 w-fit">
           <ChevronLeft size={16} /> voltar pra home
         </Link>
@@ -95,7 +95,7 @@ export default function Finais() {
         </p>
         <h1 className="font-display text-3xl md:text-4xl mb-8">Todas as finais</h1>
 
-        {/* lista de finais */}
+        
         <div className="space-y-2">
           {finais.map((f) => {
             const tema = getTimeTema(f.time);
@@ -103,7 +103,7 @@ export default function Finais() {
             return (
               <div
                 key={f.id}
-                className="w-full border rounded-lg p-4 flex items-center justify-between group transition-colors"
+                className="w-full min-w-0 border rounded-lg p-4 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-between group transition-colors"
                 style={{
                   borderColor: `${statusColor}22`,
                   backgroundColor: "transparent",
@@ -117,9 +117,9 @@ export default function Finais() {
                   e.currentTarget.style.borderColor = `${statusColor}22`;
                 }}
               >
-                <div className="flex items-center gap-4">
-                  <span className="w-1.5 h-8 rounded-full" style={{ backgroundColor: tema.primario }} />
-                  <div className="flex items-center gap-3">
+                <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                  <span className="w-1.5 h-8 shrink-0 rounded-full" style={{ backgroundColor: tema.primario }} />
+                  <div className="flex min-w-0 items-center gap-3">
                     {f.time.toLowerCase().includes("argentina") && (
                       <img src={argentinaLogo} alt="Argentina" className="w-10 h-13 object-contain rounded-full" />
                     )}
@@ -132,21 +132,21 @@ export default function Finais() {
                     {f.time.toLowerCase().includes("miami") && (
                       <img src={interMiamiLogo} alt="Inter Miami" className="w-10 h-10 object-contain rounded-full" />
                     )}
-                    <div>
-                      <div className="font-display text-lg">
+                    <div className="min-w-0">
+                      <div className="font-display text-base sm:text-lg break-words">
                       {f.competicao}
                       {f.jogo !== "Único" && (
                       <span className="text-white/40 text-sm font-mono ml-2">({f.jogo.toLowerCase()})</span>
                       )}
                       </div>
-                      <div className="text-xs text-white/40 font-display">
+                      <div className="text-xs text-white/40 font-display break-words">
                         {f.time} vs {f.adversario}
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8">
-                  <div className="text-right">
+                <div className="flex items-end justify-between gap-4 pl-4 sm:items-center sm:justify-end sm:gap-8 sm:pl-0">
+                  <div className="text-left sm:text-right">
                     <div className="font-display text-sm">{f.placar}</div>
                     <div className="text-xs text-white/40 font-display mt-0.5">{f.data}</div>
                     <div

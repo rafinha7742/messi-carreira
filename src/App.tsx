@@ -9,7 +9,7 @@ import ScrollToTop from "./ScrollToTop";
 import Treinadores from "./pages/Treinadores";
 import NotFound from "./pages/NotFound";
 
-// ...
+
 export default function App() {
   return (
     <>

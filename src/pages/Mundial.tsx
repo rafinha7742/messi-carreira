@@ -42,9 +42,6 @@ export default function Mundial() {
       return matchYear === year;
     });
 
-  // Enquanto os dados ainda não chegaram do back-end, mostramos um aviso
-  // simples em vez da tela de "não encontrada" (senão ela pisca na tela
-  // por uma fração de segundo antes dos dados carregarem).
   if (carregando) {
     return (
       <div className="px-6 py-10 max-w-6xl mx-auto text-white/60">
@@ -76,7 +73,7 @@ export default function Mundial() {
 
   return (
     <div className="relative min-h-screen text-[#EDEAE3] font-sans" style={{ backgroundColor: "#0A0C10" }}>
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Link to={backTo} state={{ from }} className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white/80 mb-6">
           <ArrowLeft size={16} /> {backText}
         </Link>
@@ -89,7 +86,7 @@ export default function Mundial() {
             {mundial.nota ? <p className="mt-2 text-sm text-white/50">{mundial.nota}</p> : null}
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#12151B] p-6 text-sm text-white/80">
+          <div className="w-full sm:w-auto rounded-2xl border border-white/10 bg-[#12151B] p-4 sm:p-6 text-sm text-white/80">
             <div className="font-medium text-white">Resumo da Copa</div>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <div>
@@ -121,7 +118,7 @@ export default function Mundial() {
             ) : (
               <div className="space-y-4">
                 {matchesByDate.map((partida) => (
-                  <article key={partida.idx} className="rounded-2xl border border-white/10 bg-[#12151B] p-5 hover:border-white/20 transition-colors">
+                  <article key={partida.idx} className="rounded-2xl border border-white/10 bg-[#12151B] p-4 sm:p-5 hover:border-white/20 transition-colors">
                     <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                       <div>
                         <div className="text-white/70 text-sm">{partida.data}</div>

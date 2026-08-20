@@ -61,7 +61,7 @@ export interface Treinador {
   titulos: number;
 }
 
-// Helper para tratamento de erros
+
 async function fetchAPI<T>(endpoint: string): Promise<T> {
   try {
     const response = await fetch(`${API_URL}${endpoint}`, {
@@ -80,32 +80,26 @@ async function fetchAPI<T>(endpoint: string): Promise<T> {
   }
 }
 
-// Partidas
 export async function getPartidas(): Promise<Partida[]> {
   return fetchAPI<Partida[]>("/api/partidas");
 }
 
-// Mundiais
 export async function getMundiais(): Promise<Mundial[]> {
   return fetchAPI<Mundial[]>("/api/mundiais");
 }
 
-// Temporadas
 export async function getTemporadas(): Promise<Temporada[]> {
   return fetchAPI<Temporada[]>("/api/temporadas");
 }
 
-// Títulos
 export async function getTitulos(): Promise<Titulo[]> {
   return fetchAPI<Titulo[]>("/api/titulos");
 }
 
-// Finais
 export async function getFinais(): Promise<Final[]> {
   return fetchAPI<Final[]>("/api/finais");
 }
 
-// Treinadores
 export async function getTreinadores(): Promise<Treinador[]> {
   return fetchAPI<Treinador[]>("/api/treinadores");
 }

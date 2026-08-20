@@ -35,15 +35,15 @@ export default function Temporadas() {
     carregarTemporadas();
   }, []);
 
-  // Se o filtro for "todos", mostra a lista inteira. Senão, filtra só
-  // as temporadas daquele time.
+  
+  
   const lista: Temporada[] =
     filtro === "todos"
       ? temporadas
       : temporadas.filter((t) => t.time === filtro);
 
-  // Acha o maior número de gols entre TODAS as temporadas, pra destacar
-  // qual foi o recorde na lista.
+  
+  
   const recorde = temporadas.length > 0 ? Math.max(...temporadas.map((t) => t.gols)) : 0;
 
   if (loading) {
@@ -74,7 +74,7 @@ export default function Temporadas() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Link to="/" className="flex items-center gap-1 text-sm text-white/50 hover:text-white/80 mb-6 w-fit">
           <ChevronLeft size={16} /> voltar pra home
         </Link>
@@ -84,7 +84,7 @@ export default function Temporadas() {
         </p>
         <h1 className="font-display text-3xl md:text-4xl mb-8">Todas as temporadas</h1>
 
-        {/* filtro por time */}
+        
         <div className="flex flex-wrap gap-2 mb-8">
           {filtros.map((f) => {
             const corBotao =
@@ -109,7 +109,7 @@ export default function Temporadas() {
           })}
         </div>
 
-        {/* lista de temporadas */}
+        
         <div
           className="space-y-2 min-h-[36rem] max-h-[70vh] overflow-y-auto pr-1 transition-all duration-200 scrollbar-subtle"
           style={{
@@ -125,7 +125,7 @@ export default function Temporadas() {
                 key={`${t.time}-${t.code}`}
                 to={`/temporada/${t.code.replace(/–/g, "-")}`}
                 state={{ from: "temporadas" }}
-                className="w-full text-left border rounded-lg p-4 flex items-center justify-between transition-colors group"
+                className="w-full min-w-0 text-left border rounded-lg p-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between transition-colors group"
                 style={{
                   borderColor: ehRecorde ? `${tema.primario}66` : `${tema.primario}22`,
                   backgroundColor: ehRecorde ? `${tema.primario}14` : "transparent",
@@ -139,15 +139,15 @@ export default function Temporadas() {
                   e.currentTarget.style.borderColor = ehRecorde ? `${tema.primario}66` : `${tema.primario}22`;
                 }}
               >
-                <div className="flex items-center gap-4">
-                  <span className="w-1.5 h-8 rounded-full" style={{ backgroundColor: tema.primario }} />
+                <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                  <span className="w-1.5 h-8 shrink-0 rounded-full" style={{ backgroundColor: tema.primario }} />
                   <div>
                     <div className="font-display text-xl">{t.code}</div>
                     <div className="text-xs text-white/40 font-display">{tema.nome}</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
-                  <div className="text-right">
+                <div className="flex items-center justify-between gap-3 pl-4 sm:justify-end sm:gap-6 sm:pl-0">
+                  <div className="text-left sm:text-right">
                     <div className="font-display text-sm">
                       {t.jogos} jogos · {t.gols} gols · {t.assist} assist.
                     </div>

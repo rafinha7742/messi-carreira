@@ -7,8 +7,8 @@ export default function FinalsSection() {
   const [totalFinais, setTotalFinais] = useState<number>(0);
 
   useEffect(() => {
-    // Aqui o total é só "quantos itens a lista tem" — não precisa somar
-    // nada, então .length já resolve.
+    
+    
     getFinais()
       .then((dados) => setTotalFinais(dados.length))
       .catch((err) => console.error("Erro ao carregar finais:", err));

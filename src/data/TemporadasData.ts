@@ -1,5 +1,5 @@
-// Descreve o formato de uma temporada: qual código (tipo "11–12"), quantos
-// jogos, gols e assistências, e qual "era" (fase da carreira) ela representa.
+
+
 export interface Temporada {
   code: string;
   time: string;
@@ -9,9 +9,9 @@ export interface Temporada {
   era: string;
 }
 
-// Números combinando clube + seleção Argentina na mesma janela de tempo
-// (decisão que você confirmou) — conferidos batendo com o total real da
-// carreira (919 gols, 1.164 jogos).
+
+
+
 export const temporadas: Temporada[] = [
   { code: "04–05", time: "barcelona", jogos: 9, gols: 1, assist: 0, era: "Estreia" },
   { code: "05–06", time: "barcelona", jogos: 35, gols: 10, assist: 6, era: "" },
